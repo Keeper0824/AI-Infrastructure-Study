@@ -1,0 +1,10 @@
+.cache/
+results/
+installers/
+tools/windows/
+*.lnk
+__pycache__/
+*.pyc
+
+.ruff_cache/
+.pytest_cache/
