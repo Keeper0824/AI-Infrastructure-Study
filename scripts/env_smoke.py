@@ -28,7 +28,7 @@ def main():
 
     # A non-multiple length also checks the final block's mask.
     values = torch.arange(4099, device="cuda", dtype=torch.float32)
-    output = torch.empty_like(values)
+    output = torch.empty_like(values) # 只分配显存，不会初始化内容
     for _ in range(3):
         add_one[(triton.cdiv(values.numel(), 256),)](
             values, output, values.numel(), BLOCK=256
